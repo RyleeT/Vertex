@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import initialData from "./initial-data";
 import Column from "./column";
+import Form from "../leads/Form";
 
 export class Board extends Component {
   state = initialData;
@@ -76,18 +77,37 @@ export class Board extends Component {
 
   render() {
     return (
-      <div className="card-deck">
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          {this.state.columnOrder.map((columnId) => {
-            const column = this.state.columns[columnId];
-            const tasks = column.taskIds.map(
-              (taskId) => this.state.tasks[taskId]
-            );
+      <Fragment>
+        <h2 className="d-flex mt-4 justify-content-between">
+          Kanban Board
+          <button
+            className="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#form"
+            aria-expanded="false"
+            aria-controls="form"
+          >
+            Add Issue
+          </button>
+        </h2>
+        <div className="collapse" id="form">
+          <Form />
+        </div>
 
-            return <Column key={column.id} column={column} tasks={tasks} />;
-          })}
-        </DragDropContext>
-      </div>
+        <div className="card-deck">
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            {this.state.columnOrder.map((columnId) => {
+              const column = this.state.columns[columnId];
+              const tasks = column.taskIds.map(
+                (taskId) => this.state.tasks[taskId]
+              );
+
+              return <Column key={column.id} column={column} tasks={tasks} />;
+            })}
+          </DragDropContext>
+        </div>
+      </Fragment>
     );
   }
 }

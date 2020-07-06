@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getLeads, deleteLead } from "../../actions/leads";
+import Form from "./Form";
 
 export class Leads extends Component {
   static propTypes = {
@@ -17,7 +18,22 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Leads</h2>
+        <h2 className="d-flex mt-4 justify-content-between">
+          Leads
+          <button
+            className="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#form"
+            aria-expanded="false"
+            aria-controls="form"
+          >
+            Add Lead
+          </button>
+        </h2>
+        <div className="collapse" id="form">
+          <Form />
+        </div>
         <table className="table table-striped">
           <thead>
             <tr>

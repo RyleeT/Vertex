@@ -15,7 +15,7 @@ export class Header extends Component {
 
     // Display when logged in
     const authLinks = (
-      <ul className="navbar-nav ml-auto mt-2 mt-2 lg-0">
+      <ul className="navbar-nav ml-auto">
         <span className="navbar-text mr-3">
           <strong>{user ? `Welcome ${user.username}` : ""}</strong>
         </span>
@@ -32,7 +32,7 @@ export class Header extends Component {
 
     // Display when not logged in
     const guestLinks = (
-      <ul className="navbar-nav ml-auto mt-2 mt-2 lg-0">
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link to="/register" className="nav-link">
             Register

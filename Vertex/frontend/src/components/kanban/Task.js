@@ -3,9 +3,10 @@ import { Draggable } from "react-beautiful-dnd";
 import styled, { css } from "styled-components";
 
 const Card = styled.div`
+  box-shadow: 0px 1px 2px 0px rgba(9, 30, 66, 0.25);
   transition: background 0.1s;
   :hover {
-    background: WhiteSmoke;
+    background: #ebecf0;
   }
   ${(props) =>
     props.isBeingDragged &&
@@ -26,7 +27,7 @@ export class Task extends Component {
             ref={provided.innerRef}
           >
             <Card
-              className="card rounded mt-1 mx-0"
+              className="card rounded border-0 mt-1 mx-0"
               isBeingDragged={snapshot.isDragging && !snapshot.isDropAnimating}
             >
               <div className="card-body">{this.props.task.content}</div>

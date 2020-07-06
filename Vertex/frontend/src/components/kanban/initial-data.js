@@ -1,7 +1,7 @@
 const initialData = {
   tasks: {
     "task-1": { id: "task-1", content: "Connect Kanban to backend" },
-    "task-2": { id: "task-2", content: "Make Add Lead collapsible" },
+    "task-2": { id: "task-2", content: "Make unique and shareable boards" },
     "task-3": { id: "task-3", content: "Add function to create tasks" },
     "task-4": { id: "task-4", content: "Style Kanban" },
   },

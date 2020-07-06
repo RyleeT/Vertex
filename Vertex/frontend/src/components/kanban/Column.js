@@ -1,13 +1,26 @@
 import React, { Component } from "react";
 import Task from "./Task";
 import { Droppable } from "react-beautiful-dnd";
+import styled, { css } from "styled-components";
+
+const Container = styled.div`
+  background: #f4f5f7;
+`;
+
+const Title = styled.div`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`;
 
 export class Column extends Component {
   render() {
     return (
-      <div className="card bg-light rounded mx-2">
+      <Container className="card rounded mx-2">
         <div className="card-body d-flex flex-column p-1">
-          <h5 className="card-title my-1 ml-2">{this.props.column.title}</h5>
+          <h5 className="card-title my-1 ml-2">
+            <Title>{this.props.column.title}</Title>
+          </h5>
           <Droppable droppableId={this.props.column.id}>
             {(provided) => (
               <div
@@ -23,7 +36,7 @@ export class Column extends Component {
             )}
           </Droppable>
         </div>
-      </div>
+      </Container>
     );
   }
 }
