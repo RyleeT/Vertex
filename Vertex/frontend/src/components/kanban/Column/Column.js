@@ -1,17 +1,7 @@
 import React, { Component } from "react";
-import Task from "./Task";
+import Task from "../Task/Task";
 import { Droppable } from "react-beautiful-dnd";
-import styled, { css } from "styled-components";
-
-const Container = styled.div`
-  background: #f4f5f7;
-`;
-
-const Title = styled.div`
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-`;
+import { Container, Title } from "./Styles";
 
 export class Column extends Component {
   render() {

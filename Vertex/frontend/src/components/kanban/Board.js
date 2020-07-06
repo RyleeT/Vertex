@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import initialData from "./initial-data";
-import Column from "./column";
+import Column from "./Column/Column";
 import Form from "../leads/Form";
 
 export class Board extends Component {
