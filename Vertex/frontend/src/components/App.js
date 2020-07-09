@@ -10,8 +10,10 @@ import {
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
-import Header from "./layout/Header";
+import Header from "./layout/Header/Header";
+import Sidebar from "./layout/Sidebar/Sidebar";
 import Alerts from "./layout/Alerts";
+import { PageContentWrapper, Wrapper } from "./Styles";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
 import PrivateRoute from "./common/PrivateRoute";
@@ -39,16 +41,21 @@ class App extends Component {
         <AlertProvider template={AlertTemplate} {...alertOptions}>
           <Router>
             <Fragment>
-              <Header />
-              <Alerts />
-              <div className="container">
-                <Switch>
-                  <PrivateRoute exact path="/" component={Board} />
-                  <PrivateRoute exact path="/leads" component={Dashboard} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/login" component={Login} />
-                </Switch>
-              </div>
+              <Wrapper className="d-flex flex-column">
+                <Header />
+                <div className="row flex-grow-1 m-0">
+                  <Sidebar />
+                  <div className="col pl-3 pr-3 pt-3">
+                    <Switch>
+                      <PrivateRoute exact path="/" component={Board} />
+                      <PrivateRoute exact path="/leads" component={Dashboard} />
+                      <Route exact path="/register" component={Register} />
+                      <Route exact path="/login" component={Login} />
+                    </Switch>
+                  </div>
+                </div>
+                <Alerts />
+              </Wrapper>
             </Fragment>
           </Router>
         </AlertProvider>

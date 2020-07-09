@@ -18,10 +18,10 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2 className="d-flex mt-4 justify-content-between">
+        <h2 className="d-flex justify-content-between">
           Leads
           <button
-            className="btn btn-primary"
+            className="btn btn-primary rounded"
             type="button"
             data-toggle="collapse"
             data-target="#form"
@@ -54,7 +54,7 @@ export class Leads extends Component {
                 <td>
                   <button
                     onClick={this.props.deleteLead.bind(this, lead.id)}
-                    className="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm rounded"
                   >
                     Delete
                   </button>

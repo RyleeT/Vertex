@@ -6,9 +6,9 @@ import { Container, Title } from "./Styles";
 export class Column extends Component {
   render() {
     return (
-      <Container className="card rounded mx-2">
+      <Container className="card rounded border-0 mx-2">
         <div className="card-body d-flex flex-column p-1">
-          <h5 className="card-title my-1 ml-2">
+          <h5 className="my-1 ml-1">
             <Title>{this.props.column.title}</Title>
           </h5>
           <Droppable droppableId={this.props.column.id}>

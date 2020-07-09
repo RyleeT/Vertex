@@ -26,12 +26,12 @@ export class Board extends Component {
 
     // If task is dropped in the same column
     if (start === finish) {
-      const newTaskIds = Array.from(column.taskIds);
+      const newTaskIds = Array.from(start.taskIds);
       newTaskIds.splice(source.index, 1);
       newTaskIds.splice(destination.index, 0, draggableId);
 
       const newColumn = {
-        ...column,
+        ...start,
         taskIds: newTaskIds,
       };
 
@@ -78,10 +78,10 @@ export class Board extends Component {
   render() {
     return (
       <Fragment>
-        <h2 className="d-flex mt-4 justify-content-between">
+        <h2 className="d-flex justify-content-between">
           Kanban Board
           <button
-            className="btn btn-primary"
+            className="btn btn-primary rounded"
             type="button"
             data-toggle="collapse"
             data-target="#form"
@@ -95,7 +95,7 @@ export class Board extends Component {
           <Form />
         </div>
 
-        <div className="card-deck">
+        <div className="card-deck mx-n2">
           <DragDropContext onDragEnd={this.onDragEnd}>
             {this.state.columnOrder.map((columnId) => {
               const column = this.state.columns[columnId];
