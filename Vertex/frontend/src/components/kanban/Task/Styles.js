@@ -1,4 +1,20 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
+
+export const TaskLink = styled(Link)`
+  display: block;
+  margin-bottom: 5px;
+  color: inherit;
+  text-decoration: inherit;
+  user-select: none;
+  &:hover,
+  &:visited,
+  &:active {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: inherit;
+  }
+`;
 
 export const Card = styled.div`
   box-shadow: 0px 1px 2px 0px rgba(9, 30, 66, 0.25);
