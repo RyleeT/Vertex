@@ -7,18 +7,15 @@ export class Task extends Component {
     return (
       <Draggable draggableId={this.props.task.id} index={this.props.index}>
         {(provided, snapshot) => (
-          <div
+          <Card
+            className="card rounded border-0 mt-1 mx-0"
+            isBeingDragged={snapshot.isDragging && !snapshot.isDropAnimating}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
           >
-            <Card
-              className="card rounded border-0 mt-1 mx-0"
-              isBeingDragged={snapshot.isDragging && !snapshot.isDropAnimating}
-            >
-              <div className="card-body">{this.props.task.content}</div>
-            </Card>
-          </div>
+            <div className="card-body">{this.props.task.content}</div>
+          </Card>
         )}
       </Draggable>
     );
