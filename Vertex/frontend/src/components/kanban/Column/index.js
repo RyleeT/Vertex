@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Task from "../Task/Task";
+import Task from "../Task";
 import { Droppable } from "react-beautiful-dnd";
 import { Container, Tasks, Title } from "./Styles";
 

@@ -10,13 +10,13 @@ import {
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
-import Header from "./layout/Header/Header";
-import Sidebar from "./layout/Sidebar/Sidebar";
+import Header from "./layout/Header/index";
+import Sidebar from "./layout/Sidebar/index";
 import Alerts from "./layout/Alerts";
-import { PageContentWrapper, Wrapper } from "./Styles";
+import { Wrapper } from "./Styles";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
-import PrivateRoute from "./common/PrivateRoute";
+import PrivateRoute from "./common/PrivateRoute/index";
 import Dashboard from "./leads/Dashboard";
 import Board from "./kanban/Board";
 
