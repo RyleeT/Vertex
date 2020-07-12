@@ -51,7 +51,7 @@ const initialData = {
     "column-2": {
       id: "column-2",
       title: "Selected for Development",
-      taskIds: ["task-6", "task-11"],
+      taskIds: ["task-6"],
     },
     "column-3": {
       id: "column-3",
@@ -61,10 +61,9 @@ const initialData = {
     "column-4": {
       id: "column-4",
       title: "Done",
-      taskIds: [],
+      taskIds: ["task-11"],
     },
   },
-  // Facilitate reordering of the columns
   columnOrder: ["column-1", "column-2", "column-3", "column-4"],
 };
 

@@ -49,7 +49,7 @@ export class Header extends Component {
 
     return (
       <Navbar>
-        <nav className="navbar navbar-expand-sm border-bottom">
+        <nav className="navbar navbar-expand-sm">
           <button
             className="navbar-toggler"
             type="button"

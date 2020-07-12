@@ -41,7 +41,7 @@ class App extends Component {
         <AlertProvider template={AlertTemplate} {...alertOptions}>
           <Router>
             <Fragment>
-              <Wrapper className="d-flex flex-column">
+              <Wrapper>
                 <Header />
                 <div className="row flex-grow-1 m-0">
                   <Sidebar />
