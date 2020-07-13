@@ -42,14 +42,14 @@ export class Register extends Component {
     const { username, email, password, password2 } = this.state;
     return (
       <div className="col-md-6 m-auto">
-        <div className="card card-body mt-5">
+        <div className="card card-body rounded mt-5">
           <h2 className="text-center">Register</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>Username</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control rounded"
                 name="username"
                 onChange={this.onChange}
                 value={username}
@@ -59,7 +59,7 @@ export class Register extends Component {
               <label>Email</label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control rounded"
                 name="email"
                 onChange={this.onChange}
                 value={email}
@@ -69,7 +69,7 @@ export class Register extends Component {
               <label>Password</label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control rounded"
                 name="password"
                 onChange={this.onChange}
                 value={password}
@@ -79,14 +79,14 @@ export class Register extends Component {
               <label>Confirm Password</label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control rounded"
                 name="password2"
                 onChange={this.onChange}
                 value={password2}
               />
             </div>
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary">
+            <div className="form-group rounded">
+              <button type="submit" className="btn btn-primary rounded">
                 Register
               </button>
             </div>

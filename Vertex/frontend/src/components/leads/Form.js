@@ -31,13 +31,13 @@ export class Form extends Component {
   render() {
     const { name, email, message } = this.state;
     return (
-      <div className="card card-body">
+      <div className="card card-body mb-2 rounded">
         <h2>Add Lead</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Name</label>
             <input
-              className="form-control"
+              className="form-control rounded"
               type="text"
               name="name"
               onChange={this.onChange}
@@ -47,7 +47,7 @@ export class Form extends Component {
           <div className="form-group">
             <label>Email</label>
             <input
-              className="form-control"
+              className="form-control rounded"
               type="email"
               name="email"
               onChange={this.onChange}
@@ -57,7 +57,7 @@ export class Form extends Component {
           <div className="form-group">
             <label>Message</label>
             <textarea
-              className="form-control"
+              className="form-control rounded"
               type="text"
               name="message"
               onChange={this.onChange}
@@ -65,7 +65,7 @@ export class Form extends Component {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary rounded">
               Submit
             </button>
           </div>

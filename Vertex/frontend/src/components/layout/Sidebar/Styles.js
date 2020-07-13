@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { ViewBoards } from "@styled-icons/heroicons-outline/ViewBoards";
 import { Contacts } from "@styled-icons/typicons/Contacts";
@@ -62,19 +62,3 @@ export const LinkText = styled.span`
   padding: 0px 0px 2px 6px;
   font-weight: bold;
 `;
-{
-  /*
-
-
-    #wrapper.toggled #sidebar-wrapper {
-      margin-left: 0;
-    }
-    
-
-    
-      #wrapper.toggled #sidebar-wrapper {
-        margin-left: -15rem;
-      }
-    }
-    */
-}
