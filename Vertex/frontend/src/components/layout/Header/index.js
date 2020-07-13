@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../../actions/auth";
-import { Navbar } from "./Styles";
+import { Navbar, Navbutton } from "./Styles";
+import { toggleSidebar } from "../../../actions/sidebar";
 
 export class Header extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
     logout: PropTypes.func.isRequired,
+    toggleSidebar: PropTypes.func.isRequired,
   };
 
   render() {
@@ -16,7 +18,7 @@ export class Header extends Component {
 
     // Display when logged in
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav flex-fill w-100 justify-content-end">
         <span className="navbar-text text-white mr-3">
           <strong>{user ? `Welcome ${user.username}` : ""}</strong>
         </span>
@@ -33,7 +35,7 @@ export class Header extends Component {
 
     // Display when not logged in
     const guestLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav flex-fill w-100 justify-content-end">
         <li className="nav-item">
           <Link to="/register" className="nav-link text-white">
             Register
@@ -47,32 +49,30 @@ export class Header extends Component {
       </ul>
     );
 
+    // Display on small screen
+    const sidebarToggle = (
+      <ul className="navbar-nav flex-fill w-100">
+        <Navbutton onClick={this.props.toggleSidebar} size="30"></Navbutton>
+      </ul>
+    );
+
     return (
       <Navbar>
-        <nav className="navbar navbar-expand-sm">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+        <nav className="navbar navbar-expand">
+          {sidebarToggle}
+          <a
+            className="navbar-brand flex-fill justify-content-center text-white"
+            href="#"
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand text-white" href="#">
-              <img
-                src="/static/VertexLogo.png"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-                alt=""
-              />
-              Vertex
-            </a>
-          </div>
+            <img
+              src="/static/VertexLogo.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />
+            Vertex
+          </a>
           {isAuthenticated ? authLinks : guestLinks}
         </nav>
       </Navbar>
@@ -84,4 +84,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { logout })(Header);
+export default connect(mapStateToProps, { logout, toggleSidebar })(Header);

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import {
+  InlineWrapper,
   SidebarWrapper,
   SidebarHeading,
   ListGroup,
@@ -10,8 +13,14 @@ import {
 } from "./Styles";
 
 export class Sidebar extends Component {
+  static propTypes = {
+    sidebar: PropTypes.object.isRequired,
+  };
+
   render() {
-    return (
+    const { visible } = this.props.sidebar;
+
+    const sidebar = (
       <SidebarWrapper>
         <SidebarHeading>Project Manager</SidebarHeading>
         <ListGroup>
@@ -40,7 +49,13 @@ export class Sidebar extends Component {
         </ListGroup>
       </SidebarWrapper>
     );
+
+    return <InlineWrapper>{visible ? sidebar : ""}</InlineWrapper>;
   }
 }
 
-export default Sidebar;
+const mapStateToProps = (state) => ({
+  sidebar: state.sidebar,
+});
+
+export default connect(mapStateToProps)(Sidebar);

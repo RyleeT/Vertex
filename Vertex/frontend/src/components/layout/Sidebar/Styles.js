@@ -3,6 +3,15 @@ import { NavLink } from "react-router-dom";
 import { ViewBoards } from "@styled-icons/heroicons-outline/ViewBoards";
 import { Contacts } from "@styled-icons/typicons/Contacts";
 
+export const InlineWrapper = styled.div`
+  display: flex;
+  @media (max-width: 992px) {
+    position: fixed;
+    z-index: 1;
+    min-height: 100vh;
+  }
+`;
+
 export const SidebarWrapper = styled.div`
   background: #f4f5f7;
   padding: 0px;
@@ -11,9 +20,6 @@ export const SidebarWrapper = styled.div`
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
   transition: margin 0.25s ease-out;
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 export const SidebarHeading = styled.div`
