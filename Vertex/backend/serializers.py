@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from leads.models import Lead, Task, Column, Board
+from backend.models import Lead, Task, Column, Board
 
 # Lead Serializer
 class LeadSerializer(serializers.ModelSerializer):
