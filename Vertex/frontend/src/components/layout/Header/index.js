@@ -49,7 +49,7 @@ export class Header extends Component {
       </ul>
     );
 
-    // Display on small screen
+    // Sidebar toggle
     const sidebarToggle = (
       <ul className="navbar-nav flex-fill w-100">
         <Navbutton onClick={this.props.toggleSidebar} size="30"></Navbutton>

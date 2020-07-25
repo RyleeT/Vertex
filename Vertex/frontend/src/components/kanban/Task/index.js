@@ -5,7 +5,10 @@ import { Card, TaskLink } from "./Styles";
 export class Task extends Component {
   render() {
     return (
-      <Draggable draggableId={this.props.task.id} index={this.props.index}>
+      <Draggable
+        draggableId={this.props.task.id.toString()}
+        index={this.props.index}
+      >
         {(provided, snapshot) => (
           <TaskLink
             to="/"
@@ -17,7 +20,7 @@ export class Task extends Component {
               className="card rounded border-0 mx-0"
               isBeingDragged={snapshot.isDragging && !snapshot.isDropAnimating}
             >
-              <div className="card-body">{this.props.task.content}</div>
+              <div className="card-body">{this.props.task.title}</div>
             </Card>
           </TaskLink>
         )}

@@ -7,7 +7,7 @@ export class Form extends Component {
   state = {
     name: "",
     email: "",
-    messaage: "",
+    message: "",
   };
 
   static propTypes = {

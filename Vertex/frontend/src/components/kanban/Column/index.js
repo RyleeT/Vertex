@@ -8,7 +8,7 @@ export class Column extends Component {
     return (
       <Container className="card rounded border-0 mx-2">
         <Title>{this.props.column.title}</Title>
-        <Droppable droppableId={this.props.column.id}>
+        <Droppable droppableId={this.props.column.id.toString()}>
           {(provided) => (
             <Tasks ref={provided.innerRef} {...provided.droppableProps}>
               {this.props.tasks.map((task, index) => (
