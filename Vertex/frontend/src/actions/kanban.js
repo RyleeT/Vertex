@@ -88,18 +88,44 @@ export const addColumn = (column) => (dispatch, getState) => {
 
 // Add task
 export const addTask = (task) => (dispatch, getState) => {
-  axios
-    .post("/api/tasks/", task, tokenConfig(getState))
-    .then((res) => {
-      dispatch(createMessage({ addTask: "Task Added" }));
-      dispatch({
-        type: ADD_TASK,
-        payload: res.data,
-      });
+  // Get tasks and first column from database
+  const reqOne = axios.get("/api/tasks/", tokenConfig(getState));
+  const reqTwo = axios.get("/api/columns/1/", tokenConfig(getState));
+
+  axios.all([reqOne, reqTwo]).then(
+    axios.spread((...responses) => {
+      const getResOne = responses[0].data;
+      const getResTwo = responses[1].data;
+
+      // Calculate new taskId and add to taskIds in column
+      const recentTask =
+        getResOne[Object.keys(getResOne)[Object.keys(getResOne).length - 1]]
+          .id + 1;
+      getResTwo.taskIds.push(recentTask.toString());
+
+      // Send new task and updated column to database
+      const postReqOne = axios.post("/api/tasks/", task, tokenConfig(getState));
+      const postReqTwo = axios.put(
+        `/api/columns/1/`,
+        getResTwo,
+        tokenConfig(getState)
+      );
+
+      axios.all([postReqOne, postReqTwo]).then(
+        axios.spread((...responses) => {
+          const postResOne = responses[0].data;
+          const postResTwo = responses[1].data;
+
+          // Send new task and updated column to reducer
+          dispatch(createMessage({ addTask: "Task Added" }));
+          dispatch({
+            type: ADD_TASK,
+            payload: { postResOne, postResTwo },
+          });
+        })
+      );
     })
-    .catch((err) =>
-      dispatch(returnErrors(err.response.data, err.response.status))
-    );
+  );
 };
 
 // Move task

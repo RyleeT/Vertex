@@ -76,7 +76,7 @@ export class Board extends Component {
         ...finish,
         taskIds: finishTaskIds,
       };
-
+      console.log(newStart, newFinish);
       this.props.dispatch(moveTask(newStart, newFinish));
       return;
     }

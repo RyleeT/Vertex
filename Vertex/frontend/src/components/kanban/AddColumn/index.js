@@ -6,7 +6,7 @@ import { addColumn } from "../../../actions/kanban";
 export class AddColumn extends Component {
   state = {
     title: "",
-    tasks: [0],
+    tasks: [],
   };
 
   static propTypes = {

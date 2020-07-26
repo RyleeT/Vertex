@@ -35,7 +35,11 @@ export default function (state = initialState, action) {
     case ADD_TASK:
       return {
         ...state,
-        tasks: [...state.tasks, action.payload],
+        tasks: {
+          ...state.tasks,
+          [action.payload.postResOne.id]: action.payload.postResOne,
+        },
+        columns: { ...state.columns, 1: action.payload.postResTwo },
       };
     case ADD_COLUMN:
       return {
