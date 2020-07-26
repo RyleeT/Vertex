@@ -23,7 +23,7 @@ class Task(models.Model):
 
 class Column(models.Model):
     title = models.CharField(max_length=30)
-    taskIds = ArrayField(models.CharField(max_length=4, blank=True, db_index=True))
+    taskIds = ArrayField(models.CharField(max_length=4), blank=True,)
     owner = models.ForeignKey(
         User, related_name="columns", on_delete=models.CASCADE, null=True
     )
