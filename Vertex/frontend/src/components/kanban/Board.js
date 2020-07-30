@@ -98,6 +98,7 @@ export class Board extends Component {
             >
               Add Issue
             </button>
+            {/* TODO: FINISH ADD COLUMN FUNCTION
             <button
               className="btn btn-primary rounded"
               type="button"
@@ -107,7 +108,8 @@ export class Board extends Component {
               aria-controls="form2"
             >
               Add Column
-            </button>
+            </button> 
+            */}
           </span>
         </h2>
         <div className="collapse" id="form">

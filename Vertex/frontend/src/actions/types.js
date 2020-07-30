@@ -26,5 +26,6 @@ export const GET_COLUMNS = "GET_COLUMNS";
 export const GET_BOARDS = "GET_BOARDS";
 export const ADD_TASK = "ADD_TASK";
 export const ADD_COLUMN = "ADD_COLUMN";
+export const ADD_BOARD = "ADD_BOARD";
 export const DELETE_TASK = "DELETE_TASK";
 export const MOVE_TASK = "MOVE_TASK";

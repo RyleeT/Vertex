@@ -4,6 +4,7 @@ import {
   GET_BOARDS,
   ADD_TASK,
   ADD_COLUMN,
+  ADD_BOARD,
   DELETE_TASK,
   MOVE_TASK,
   LOGOUT_SUCCESS,
@@ -37,14 +38,22 @@ export default function (state = initialState, action) {
         ...state,
         tasks: {
           ...state.tasks,
-          [action.payload.postResOne.id]: action.payload.postResOne,
+          [action.payload.newTask.id]: action.payload.newTask,
         },
-        columns: { ...state.columns, 1: action.payload.postResTwo },
+        columns: {
+          ...state.columns,
+          [action.payload.newColumn.id]: action.payload.newColumn,
+        },
       };
     case ADD_COLUMN:
       return {
         ...state,
         columns: [...state.columns, action.payload],
+      };
+    case ADD_BOARD:
+      return {
+        ...state,
+        boards: [...state.boards, action.payload],
       };
     case DELETE_TASK:
       return {
