@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "backend",
     "frontend",
     "knox",
-    "accounts",
+    "accounts.apps.AccountsConfig",
 ]
 
 REST_FRAMEWORK = {
