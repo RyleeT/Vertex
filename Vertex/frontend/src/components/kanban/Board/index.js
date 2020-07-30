@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { DragDropContext } from "react-beautiful-dnd";
 import PropTypes from "prop-types";
-import Column from "./Column";
-import AddColumn from "./AddColumn";
-import AddTask from "./AddTask";
+import Column from "../Column";
+import AddColumn from "../AddColumn";
+import AddTask from "../AddTask";
 import {
   getColumns,
   getTasks,
   getBoards,
   moveTask,
-} from "../../actions/kanban";
+} from "../../../actions/kanban";
+import { Title } from "./Styles";
 
 export class Board extends Component {
   static propTypes = {
@@ -76,7 +77,6 @@ export class Board extends Component {
         ...finish,
         taskIds: finishTaskIds,
       };
-      console.log(newStart, newFinish);
       this.props.dispatch(moveTask(newStart, newFinish));
       return;
     }
@@ -85,7 +85,7 @@ export class Board extends Component {
   render() {
     return (
       <Fragment>
-        <h2 className="d-flex justify-content-between">
+        <Title className="d-flex justify-content-between">
           Kanban Board
           <span>
             <button
@@ -111,7 +111,7 @@ export class Board extends Component {
             </button> 
             */}
           </span>
-        </h2>
+        </Title>
         <div className="collapse" id="form">
           <AddTask />
         </div>

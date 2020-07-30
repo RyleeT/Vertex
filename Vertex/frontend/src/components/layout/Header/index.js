@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../../actions/auth";
-import { Navbar, Navbutton } from "./Styles";
+import { Navbar, Navbutton, StyledLink, Title, Welcome } from "./Styles";
 import { toggleSidebar } from "../../../actions/sidebar";
 
 export class Header extends Component {
@@ -20,7 +19,7 @@ export class Header extends Component {
     const authLinks = (
       <ul className="navbar-nav flex-fill w-100 justify-content-end">
         <span className="navbar-text text-white mr-3">
-          <strong>{user ? `Welcome ${user.username}` : ""}</strong>
+          <Welcome>{user ? `Welcome ${user.username}` : ""}</Welcome>
         </span>
         <li className="nav-item">
           <button
@@ -37,14 +36,14 @@ export class Header extends Component {
     const guestLinks = (
       <ul className="navbar-nav flex-fill w-100 justify-content-end">
         <li className="nav-item">
-          <Link to="/register" className="nav-link text-white">
+          <StyledLink to="/register" className="nav-link">
             Register
-          </Link>
+          </StyledLink>
         </li>
         <li className="nav-item">
-          <Link to="/login" className="nav-link text-white">
+          <StyledLink to="/login" className="nav-link">
             Login
-          </Link>
+          </StyledLink>
         </li>
       </ul>
     );
@@ -71,7 +70,7 @@ export class Header extends Component {
               className="d-inline-block align-top"
               alt=""
             />
-            Vertex
+            <Title>Vertex</Title>
           </a>
           {isAuthenticated ? authLinks : guestLinks}
         </nav>

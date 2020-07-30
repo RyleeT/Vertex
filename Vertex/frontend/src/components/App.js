@@ -13,7 +13,7 @@ import Login from "./accounts/Login";
 import Register from "./accounts/Register";
 import PrivateRoute from "./common/PrivateRoute/index";
 import Dashboard from "./leads/Dashboard";
-import Board from "./kanban/Board";
+import Board from "./kanban/Board/index";
 
 import { Provider } from "react-redux";
 import store from "../store";

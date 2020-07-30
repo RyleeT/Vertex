@@ -17,6 +17,8 @@ export const TaskLink = styled(Link)`
 `;
 
 export const Card = styled.div`
+  font-size: 15px;
+  font-weight: 500;
   box-shadow: 0px 1px 2px 0px rgba(9, 30, 66, 0.25);
   transition: background 0.1s;
   :hover {

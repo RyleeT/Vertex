@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getLeads, deleteLead } from "../../actions/leads";
-import Form from "./Form";
+import { getLeads, deleteLead } from "../../../actions/leads";
+import Form from "../Form";
+import { Title } from "./Styles";
 
 export class Leads extends Component {
   static propTypes = {
@@ -18,7 +19,7 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2 className="d-flex justify-content-between">
+        <Title className="d-flex justify-content-between">
           Leads
           <button
             className="btn btn-primary rounded"
@@ -30,7 +31,7 @@ export class Leads extends Component {
           >
             Add Lead
           </button>
-        </h2>
+        </Title>
         <div className="collapse" id="form">
           <Form />
         </div>
