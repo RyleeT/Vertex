@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "Vertex.accounts.apps.AccountsConfig",
+    "Vertex.backend",
+    "Vertex.frontend",
     "rest_framework",
-    "backend",
-    "frontend",
     "knox",
-    "accounts.apps.AccountsConfig",
 ]
 
 REST_FRAMEWORK = {
@@ -135,5 +135,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
 # Directory for images
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "frontend/assets"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "Vertex/frontend/assets"),)
 

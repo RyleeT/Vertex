@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class AccountsConfig(AppConfig):
-    name = "accounts"
+    name = "Vertex.accounts"
 
     def ready(self):
-        import accounts.signals
+        import Vertex.accounts.signals

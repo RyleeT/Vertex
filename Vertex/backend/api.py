@@ -1,4 +1,4 @@
-from backend.models import Lead, Task, Column
+from Vertex.backend.models import Lead, Task, Column
 from rest_framework import viewsets, permissions
 from .serializers import (
     LeadSerializer,

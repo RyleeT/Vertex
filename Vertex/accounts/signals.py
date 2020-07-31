@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
-from backend.models import Lead, Task, Column, Board
+from Vertex.backend.models import Lead, Task, Column, Board
 
 
 def create_defaults(sender, instance, created, **kwargs):
