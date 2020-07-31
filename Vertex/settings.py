@@ -43,10 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "Vertex.backend",
-    "Vertex.frontend",
+    "backend",
+    "frontend",
     "knox",
-    "Vertex.accounts.apps.AccountsConfig",
+    "accounts.apps.AccountsConfig",
 ]
 
 REST_FRAMEWORK = {

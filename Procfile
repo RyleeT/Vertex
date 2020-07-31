@@ -1,1 +1,1 @@
-web: gunicorn Vertex.Vertex.wsgi --log-file -
+web: gunicorn Vertex.wsgi --log-file -
