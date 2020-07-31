@@ -22,7 +22,7 @@ export class Leads extends Component {
         <Title className="d-flex justify-content-between">
           Leads
           <button
-            className="btn btn-primary rounded"
+            className="btn btn-primary rounded mr-1"
             type="button"
             data-toggle="collapse"
             data-target="#form"
