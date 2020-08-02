@@ -5,7 +5,7 @@ import { Contacts } from "@styled-icons/typicons/Contacts";
 
 export const InlineWrapper = styled.div`
   display: flex;
-  @media (max-width: 992px) {
+  @media (max-width: 991.98px) {
     position: fixed;
     z-index: 1;
     min-height: 100vh;
