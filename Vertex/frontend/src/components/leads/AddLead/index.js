@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addLead } from "../../actions/leads";
+import { addLead } from "../../../actions/leads";
 
-export class Form extends Component {
+export class AddLead extends Component {
   state = {
     name: "",
     email: "",
@@ -75,4 +75,4 @@ export class Form extends Component {
   }
 }
 
-export default connect(null, { addLead })(Form);
+export default connect(null, { addLead })(AddLead);

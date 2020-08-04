@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getLeads, deleteLead } from "../../../actions/leads";
-import Form from "../Form";
+import AddLead from "../AddLead";
 import { Title } from "./Styles";
 
 export class Leads extends Component {
@@ -25,15 +25,15 @@ export class Leads extends Component {
             className="btn btn-primary rounded mr-1"
             type="button"
             data-toggle="collapse"
-            data-target="#form"
+            data-target="#addlead"
             aria-expanded="false"
-            aria-controls="form"
+            aria-controls="addlead"
           >
             Add Lead
           </button>
         </Title>
-        <div className="collapse" id="form">
-          <Form />
+        <div className="collapse" id="addlead">
+          <AddLead />
         </div>
         <table className="table table-striped">
           <thead>

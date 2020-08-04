@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Draggable } from "react-beautiful-dnd";
-import TaskDetails from "../TaskDetails";
+import TaskDetails from "./TaskDetails";
 import { Card, TaskLink } from "./Styles";
 
 export class Task extends Component {

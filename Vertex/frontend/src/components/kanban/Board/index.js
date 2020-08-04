@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { DragDropContext } from "react-beautiful-dnd";
 import PropTypes from "prop-types";
-import Column from "../Column";
+import Column from "./Column";
 import AddColumn from "../AddColumn";
 import AddTask from "../AddTask";
 import {
