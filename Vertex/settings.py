@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import environ
+import dj_database_url
 
 # Enables reading dotenv files
 env = environ.Env(DEBUG=(bool, False))
@@ -88,17 +89,8 @@ WSGI_APPLICATION = "Vertex.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env("DB_NAME"),
-        "USER": env("DB_USER"),
-        "PASSWORD": env("DB_PASS"),
-        "HOST": env("DB_HOST"),
-        "PORT": env("DB_PORT"),
-    }
-}
-
+DATABASES = {"default": {"ENGINE": "django.db.backends.postgresql_psycopg2",}}
+DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -135,5 +127,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
 # Directory for images
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "Vertex/frontend/assets"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "Vertex/frontend/assets",),)
 
