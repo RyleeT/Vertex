@@ -4,6 +4,8 @@ import { tokenConfig } from "./auth";
 
 import {
   GET_TASKS,
+  GET_TASK,
+  CLOSE_TASK,
   DELETE_TASK,
   ADD_TASK,
   GET_COLUMNS,
@@ -68,6 +70,28 @@ export const getTasks = () => (dispatch, getState) => {
     .catch((err) =>
       dispatch(returnErrors(err.response.data, err.response.status))
     );
+};
+
+// Get single task
+export const getTask = (id) => (dispatch, getState) => {
+  return axios
+    .get(`/api/tasks/${id}/`, tokenConfig(getState))
+    .then((res) => {
+      dispatch({
+        type: GET_TASK,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      dispatch(returnErrors(err.response.data, err.response.status));
+    });
+};
+
+// Close task
+export const closeTask = () => (dispatch) => {
+  dispatch({
+    type: CLOSE_TASK,
+  });
 };
 
 // Add board

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Draggable } from "react-beautiful-dnd";
-import TaskDetails from "./TaskDetails";
 import { Card, TaskLink } from "./Styles";
 
 export class Task extends Component {
@@ -12,7 +11,9 @@ export class Task extends Component {
       >
         {(provided, snapshot) => (
           <TaskLink
-            to="/"
+            to={{
+              pathname: `${this.props.match.url}/task/${this.props.task.id}`,
+            }}
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}

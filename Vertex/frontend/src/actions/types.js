@@ -22,6 +22,8 @@ export const DELETE_LEAD = "DELETE_LEAD";
 
 // Kanban Board
 export const GET_TASKS = "GET_TASKS";
+export const GET_TASK = "GET_TASK";
+export const CLOSE_TASK = "CLOSE_TASK";
 export const GET_COLUMNS = "GET_COLUMNS";
 export const GET_BOARDS = "GET_BOARDS";
 export const ADD_TASK = "ADD_TASK";

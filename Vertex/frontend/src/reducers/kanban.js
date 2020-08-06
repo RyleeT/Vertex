@@ -1,5 +1,7 @@
 import {
   GET_TASKS,
+  GET_TASK,
+  CLOSE_TASK,
   GET_COLUMNS,
   GET_BOARDS,
   ADD_TASK,
@@ -14,6 +16,7 @@ const initialState = {
   tasks: {},
   columns: {},
   boards: [],
+  taskDetails: {},
 };
 
 export default function (state = initialState, action) {
@@ -22,6 +25,16 @@ export default function (state = initialState, action) {
       return {
         ...state,
         tasks: action.payload,
+      };
+    case GET_TASK:
+      return {
+        ...state,
+        taskDetails: action.payload,
+      };
+    case CLOSE_TASK:
+      return {
+        ...state,
+        taskDetails: {},
       };
     case GET_COLUMNS:
       return {
@@ -89,6 +102,7 @@ export default function (state = initialState, action) {
         tasks: {},
         columns: {},
         boards: [],
+        taskDetails: {},
       };
     default:
       return state;

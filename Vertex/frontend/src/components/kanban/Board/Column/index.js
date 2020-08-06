@@ -12,7 +12,12 @@ export class Column extends Component {
           {(provided) => (
             <Tasks ref={provided.innerRef} {...provided.droppableProps}>
               {this.props.tasks.map((task, index) => (
-                <Task key={task.id} task={task} index={index} />
+                <Task
+                  key={task.id}
+                  task={task}
+                  index={index}
+                  match={this.props.match}
+                />
               ))}
               {provided.placeholder}
             </Tasks>

@@ -129,7 +129,14 @@ export class Board extends Component {
                 const task = column.taskIds.map(
                   (taskId) => this.props.tasks[taskId]
                 );
-                return <Column key={column.id} column={column} tasks={task} />;
+                return (
+                  <Column
+                    key={column.id}
+                    column={column}
+                    tasks={task}
+                    match={this.props.match}
+                  />
+                );
               });
             })}
           </DragDropContext>
