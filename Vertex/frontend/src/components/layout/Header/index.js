@@ -61,7 +61,7 @@ export class Header extends Component {
           {sidebarToggle}
           <a
             className="navbar-brand flex-fill justify-content-center text-white"
-            href="#"
+            href="/"
           >
             <img
               src="/static/VertexLogo.png"

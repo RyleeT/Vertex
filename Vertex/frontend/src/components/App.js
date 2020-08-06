@@ -1,19 +1,21 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
-import Header from "./layout/Header/index";
-import Sidebar from "./layout/Sidebar/index";
+import Header from "./layout/Header";
+import Sidebar from "./layout/Sidebar";
 import Alerts from "./layout/Alerts";
 import { Wrapper } from "./Styles";
+import Home from "./common/Home";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
-import PrivateRoute from "./common/PrivateRoute/index";
+import PrivateRoute from "./common/PrivateRoute";
 import Dashboard from "./leads/Dashboard";
-import Board from "./kanban/Board/index";
+import Board from "./kanban/Board";
+import TaskDetails from "./kanban/TaskDetails";
 
 import { Provider } from "react-redux";
 import store from "../store";
@@ -42,15 +44,21 @@ class App extends Component {
                   <Sidebar />
                   <div className="col pl-3 pr-3 pt-3">
                     <Switch>
-                      <PrivateRoute exact path="/" component={Board} />
-                      <PrivateRoute exact path="/leads" component={Dashboard} />
+                      <Route exact path="/" component={Home} />
                       <Route exact path="/register" component={Register} />
                       <Route exact path="/login" component={Login} />
+                      <PrivateRoute path="/board" component={Board} />
+                      <PrivateRoute exact path="/leads" component={Dashboard} />
                     </Switch>
                   </div>
                 </div>
                 <Alerts />
               </Wrapper>
+              <PrivateRoute
+                exact
+                path="/board/task/:taskId"
+                component={TaskDetails}
+              />
             </Fragment>
           </Router>
         </AlertProvider>

@@ -26,7 +26,7 @@ export class Sidebar extends Component {
         <ListGroup>
           <ListItem
             exact
-            to="/"
+            to="/board"
             activeStyle={{
               color: "#9954BB",
               backgroundColor: "#ebecf0",
