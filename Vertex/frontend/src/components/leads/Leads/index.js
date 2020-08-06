@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getLeads, deleteLead } from "../../../actions/leads";
 import AddLead from "../AddLead";
-import { Title } from "./Styles";
+import { Title, Table } from "./Styles";
 
 export class Leads extends Component {
   static propTypes = {
@@ -35,7 +35,7 @@ export class Leads extends Component {
         <div className="collapse" id="addlead">
           <AddLead />
         </div>
-        <table className="table table-striped">
+        <Table className="table table-striped">
           <thead>
             <tr>
               <th>ID</th>
@@ -63,7 +63,7 @@ export class Leads extends Component {
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
       </Fragment>
     );
   }
