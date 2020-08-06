@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "&cshjvm%c*&^ops!9@9(u9v!ph4ijn4h$lqzr78&mtr2jf=w78"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["ryleet-app2.herokuapp.com", "127.0.0.1"]
 
