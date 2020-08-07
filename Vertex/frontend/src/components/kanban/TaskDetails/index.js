@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Modal from "../../modal";
+import Modal from "../../layout/modal";
 import PropTypes from "prop-types";
 import { getTask, closeTask } from "../../../actions/kanban";
 import { Card, TaskId, Title, Description, DescriptionBody } from "./Styles";
