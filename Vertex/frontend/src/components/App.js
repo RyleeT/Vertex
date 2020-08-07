@@ -42,7 +42,7 @@ class App extends Component {
                 <Header />
                 <div className="row flex-grow-1 m-0">
                   <Sidebar />
-                  <div className="col pl-3 pr-3 pt-3">
+                  <div className="col pl-0 pr-0">
                     <Switch>
                       <Route exact path="/" component={Home} />
                       <Route exact path="/register" component={Register} />

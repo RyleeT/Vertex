@@ -43,6 +43,7 @@ export const ListItem = styled(NavLink)`
   border-radius: 0.25rem;
   text-decoration: inherit;
   color: inherit;
+  user-select: none;
   :hover {
     background: #ebecf0;
   }

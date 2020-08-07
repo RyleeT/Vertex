@@ -59,9 +59,9 @@ export class Header extends Component {
       <Navbar>
         <nav className="navbar navbar-expand">
           {sidebarToggle}
-          <a
-            className="navbar-brand flex-fill justify-content-center text-white"
-            href="/"
+          <StyledLink
+            className="navbar-brand flex-fill justify-content-center"
+            to="/"
           >
             <img
               src="/static/VertexLogo.png"
@@ -71,7 +71,7 @@ export class Header extends Component {
               alt=""
             />
             <Title>Vertex</Title>
-          </a>
+          </StyledLink>
           {isAuthenticated ? authLinks : guestLinks}
         </nav>
       </Navbar>

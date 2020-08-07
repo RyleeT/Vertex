@@ -20,6 +20,7 @@ export const Navbutton = styled(ThreeBars)`
 export const StyledLink = styled(Link)`
   color: white;
   border-radius: 0.25rem;
+  user-select: none;
   :hover {
     color: #bebfc1;
   }

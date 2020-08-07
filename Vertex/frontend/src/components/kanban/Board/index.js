@@ -85,20 +85,21 @@ export class Board extends Component {
   render() {
     return (
       <Fragment>
-        <Title className="d-flex justify-content-between">
-          Kanban Board
-          <span>
-            <button
-              className="btn btn-primary rounded mr-1"
-              type="button"
-              data-toggle="collapse"
-              data-target="#form"
-              aria-expanded="false"
-              aria-controls="form"
-            >
-              Add Issue
-            </button>
-            {/* TODO: FINISH ADD COLUMN FUNCTION
+        <div className="pt-3 pl-3 pr-3">
+          <Title className="d-flex justify-content-between">
+            Kanban Board
+            <span>
+              <button
+                className="btn btn-primary rounded mr-1"
+                type="button"
+                data-toggle="collapse"
+                data-target="#form"
+                aria-expanded="false"
+                aria-controls="form"
+              >
+                Add Issue
+              </button>
+              {/* TODO: FINISH ADD COLUMN FUNCTION
             <button
               className="btn btn-primary rounded"
               type="button"
@@ -110,36 +111,37 @@ export class Board extends Component {
               Add Column
             </button> 
             */}
-          </span>
-        </Title>
-        <div className="collapse" id="form">
-          <AddTask />
-        </div>
-        <div className="collapse" id="form2">
-          <AddColumn />
-        </div>
+            </span>
+          </Title>
+          <div className="collapse" id="form">
+            <AddTask />
+          </div>
+          <div className="collapse" id="form2">
+            <AddColumn />
+          </div>
 
-        <div className="card-deck mx-n2">
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            {this.props.boards.map((boardId) => {
-              const board = boardId.columnOrder;
+          <div className="card-deck mx-n2">
+            <DragDropContext onDragEnd={this.onDragEnd}>
+              {this.props.boards.map((boardId) => {
+                const board = boardId.columnOrder;
 
-              return board.map((columnId) => {
-                const column = this.props.columns[columnId];
-                const task = column.taskIds.map(
-                  (taskId) => this.props.tasks[taskId]
-                );
-                return (
-                  <Column
-                    key={column.id}
-                    column={column}
-                    tasks={task}
-                    match={this.props.match}
-                  />
-                );
-              });
-            })}
-          </DragDropContext>
+                return board.map((columnId) => {
+                  const column = this.props.columns[columnId];
+                  const task = column.taskIds.map(
+                    (taskId) => this.props.tasks[taskId]
+                  );
+                  return (
+                    <Column
+                      key={column.id}
+                      column={column}
+                      tasks={task}
+                      match={this.props.match}
+                    />
+                  );
+                });
+              })}
+            </DragDropContext>
+          </div>
         </div>
       </Fragment>
     );

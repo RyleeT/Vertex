@@ -4,7 +4,9 @@ import Leads from "./Leads/index";
 export default function Dashboard() {
   return (
     <Fragment>
-      <Leads />
+      <div className="pt-3 pl-3 pr-3">
+        <Leads />
+      </div>
     </Fragment>
   );
 }
