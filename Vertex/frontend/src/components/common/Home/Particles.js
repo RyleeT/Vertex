@@ -16,7 +16,7 @@ export default class Canvas extends Component {
           params={{
             particles: {
               number: {
-                value: 30,
+                value: 35,
                 density: {
                   enable: true,
                   value_area: 800,
@@ -59,7 +59,7 @@ export default class Canvas extends Component {
               },
               line_linked: {
                 enable_auto: true,
-                distance: 100,
+                distance: 150,
                 color: {
                   value: ["#ff4a4a", "#ff6b4a", "#ff954a", "#ffab4a"],
                 },
