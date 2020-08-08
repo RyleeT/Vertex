@@ -1,15 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import ProjectAvatar from "./ProjectAvatar";
 import {
-  InlineWrapper,
+  OverlayWrapper,
   SidebarWrapper,
   SidebarHeading,
+  ProjectTexts,
+  ProjectName,
+  ProjectInfo,
+  SidebarFooter,
   ListGroup,
   ListItem,
-  KanbanIcon,
   LinkText,
+  KanbanIcon,
   LeadIcon,
+  GithubIcon,
+  StyledLink,
 } from "./Styles";
 
 export class Sidebar extends Component {
@@ -22,13 +29,19 @@ export class Sidebar extends Component {
 
     const sidebar = (
       <SidebarWrapper>
-        <SidebarHeading>Project Manager</SidebarHeading>
+        <SidebarHeading>
+          <ProjectAvatar />
+          <ProjectTexts>
+            <ProjectName>Vertex 1.0</ProjectName>
+            <ProjectInfo>Project Manager</ProjectInfo>
+          </ProjectTexts>
+        </SidebarHeading>
         <ListGroup>
           <ListItem
             exact
             to="/board"
             activeStyle={{
-              color: "#9954BB",
+              color: "#ff6b4a",
               backgroundColor: "#ebecf0",
             }}
           >
@@ -39,7 +52,7 @@ export class Sidebar extends Component {
             exact
             to="/leads"
             activeStyle={{
-              color: "#9954BB",
+              color: "#ff6b4a",
               backgroundColor: "#ebecf0",
             }}
           >
@@ -47,10 +60,15 @@ export class Sidebar extends Component {
             <LinkText>Lead Manager</LinkText>
           </ListItem>
         </ListGroup>
+        <SidebarFooter>
+          <StyledLink href="https://github.com/RyleeT/Vertex" target="_blank">
+            <GithubIcon size="30" />
+          </StyledLink>
+        </SidebarFooter>
       </SidebarWrapper>
     );
 
-    return <InlineWrapper>{visible ? sidebar : ""}</InlineWrapper>;
+    return <OverlayWrapper>{visible ? sidebar : ""}</OverlayWrapper>;
   }
 }
 
