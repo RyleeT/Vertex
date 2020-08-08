@@ -16,7 +16,7 @@ export class Home extends Component {
               </h1>
               <p>
                 <Button to="/login" className="btn">
-                  Log in
+                  Login
                 </Button>
               </p>
             </div>

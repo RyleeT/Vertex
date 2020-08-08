@@ -8,7 +8,7 @@ import AlertTemplate from "react-alert-template-basic";
 import Header from "./layout/Header";
 import Sidebar from "./layout/Sidebar";
 import Alerts from "./layout/Alerts";
-import { Wrapper } from "./Styles";
+
 import Home from "./common/Home";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
@@ -16,6 +16,8 @@ import PrivateRoute from "./common/PrivateRoute";
 import Dashboard from "./leads/Dashboard";
 import Board from "./kanban/Board";
 import TaskDetails from "./kanban/TaskDetails";
+
+import { Wrapper } from "./Styles";
 
 import { Provider } from "react-redux";
 import store from "../store";

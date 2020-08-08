@@ -27,4 +27,8 @@ export const Button = styled(Link)`
     color: white;
     background-color: #e95739;
   }
+  :focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;
