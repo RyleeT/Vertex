@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 
 export const Heading = styled.div`
@@ -28,14 +27,4 @@ export const Button = styled(Link)`
     color: white;
     background-color: #e95739;
   }
-`;
-
-export const StyledParticles = styled(Particles)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
 `;

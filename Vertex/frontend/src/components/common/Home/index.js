@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StyledParticles from "./Particles";
+import StyledParticles from "../Particles";
 import { HomeWrapper, Heading, Button } from "./Styles";
 
 export class Home extends Component {
