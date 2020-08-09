@@ -22,7 +22,7 @@ export const Button = styled(Link)`
   background-color: #ff6b4a;
   color: white;
   font-size: 20px;
-  padding: 16px 50px;
+  padding: 16px 30px;
   :hover {
     color: white;
     background-color: #e95739;

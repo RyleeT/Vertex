@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ProjectAvatar from "./ProjectAvatar";
 import {
-  OverlayWrapper,
   SidebarWrapper,
   SidebarHeading,
   ProjectTexts,
@@ -68,7 +67,11 @@ export class Sidebar extends Component {
       </SidebarWrapper>
     );
 
-    return <OverlayWrapper>{visible ? sidebar : ""}</OverlayWrapper>;
+    if (visible) {
+      return sidebar;
+    } else {
+      return "";
+    }
   }
 }
 

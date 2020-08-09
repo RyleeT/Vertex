@@ -5,7 +5,13 @@ import PropTypes from "prop-types";
 import { register } from "../../../actions/auth";
 import { createMessage } from "../../../actions/messages";
 import StyledParticles from "../../common/Particles";
-import { PageWrapper, RegisterWrapper, Card, Button, Label } from "./Styles";
+import {
+  PageWrapper,
+  FormWrapper,
+  Card,
+  Button,
+  Label,
+} from "../../common/Styles";
 
 export class Register extends Component {
   state = {
@@ -45,7 +51,7 @@ export class Register extends Component {
     return (
       <PageWrapper>
         <StyledParticles />
-        <RegisterWrapper>
+        <FormWrapper>
           <Card className="card card-body">
             <h2 className="text-center">Register</h2>
             <form onSubmit={this.onSubmit}>
@@ -101,7 +107,7 @@ export class Register extends Component {
               Already have an account? <Link to="/login">Login.</Link>
             </p>
           </div>
-        </RegisterWrapper>
+        </FormWrapper>
       </PageWrapper>
     );
   }

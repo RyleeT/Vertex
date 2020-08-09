@@ -12,7 +12,7 @@ import {
   getBoards,
   moveTask,
 } from "../../../actions/kanban";
-import { Title } from "./Styles";
+import { Title, Button } from "./Styles";
 
 export class Board extends Component {
   static propTypes = {
@@ -85,20 +85,16 @@ export class Board extends Component {
   render() {
     return (
       <Fragment>
-        <div className="pt-3 pl-3 pr-3">
+        <div className="pt-4 pl-3 pr-3">
           <Title className="d-flex justify-content-between">
             Kanban Board
             <span>
-              <button
-                className="btn btn-primary rounded mr-1"
-                type="button"
-                data-toggle="collapse"
-                data-target="#form"
-                aria-expanded="false"
-                aria-controls="form"
+              <Button
+                to={`${this.props.match.url}/task/create`}
+                className="btn"
               >
                 Add Issue
-              </button>
+              </Button>
               {/* TODO: FINISH ADD COLUMN FUNCTION
             <button
               className="btn btn-primary rounded"
@@ -113,9 +109,6 @@ export class Board extends Component {
             */}
             </span>
           </Title>
-          <div className="collapse" id="form">
-            <AddTask />
-          </div>
           <div className="collapse" id="form2">
             <AddColumn />
           </div>

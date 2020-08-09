@@ -16,6 +16,7 @@ import PrivateRoute from "./common/PrivateRoute";
 import Dashboard from "./leads/Dashboard";
 import Board from "./kanban/Board";
 import TaskDetails from "./kanban/TaskDetails";
+import AddTask from "./kanban/AddTask";
 
 import { Wrapper } from "./Styles";
 
@@ -42,7 +43,7 @@ class App extends Component {
             <Fragment>
               <Wrapper>
                 <Header />
-                <div className="row flex-grow-1 m-0">
+                <div className="row m-0">
                   <Sidebar />
                   <div className="col pl-0 pr-0">
                     <Switch>
@@ -56,11 +57,18 @@ class App extends Component {
                 </div>
                 <Alerts />
               </Wrapper>
-              <PrivateRoute
-                exact
-                path="/board/task/:taskId"
-                component={TaskDetails}
-              />
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/board/task/create"
+                  component={AddTask}
+                />
+                <PrivateRoute
+                  exact
+                  path="/board/task/:taskId"
+                  component={TaskDetails}
+                />
+              </Switch>
             </Fragment>
           </Router>
         </AlertProvider>

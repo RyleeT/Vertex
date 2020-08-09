@@ -4,29 +4,24 @@ import { ViewBoards } from "@styled-icons/heroicons-outline/ViewBoards";
 import { Contacts } from "@styled-icons/typicons/Contacts";
 import { Github } from "@styled-icons/fa-brands/Github";
 
-export const OverlayWrapper = styled.div`
-  display: flex;
+export const SidebarWrapper = styled.div`
+  display: inherit;
+  flex-direction: column;
+  background: #f4f5f7;
+  border: 1px solid #dfe1e6;
   @media (max-width: 991.98px) {
     position: fixed;
     z-index: 1;
-    min-height: 100vh;
+    height: calc(100% - 56.375px);
   }
 `;
 
-export const SidebarWrapper = styled.div`
-  background: #f4f5f7;
-  padding: 0px;
-  border: 1px solid #dfe1e6;
-  display: flex;
-  flex-direction: column;
-`;
-
 export const SidebarHeading = styled.div`
-  font-weight: bold;
-  padding: 16px;
-  font-size: 1rem;
-  display: flex;
+  display: inherit;
   flex-direction: row;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 24px 16px;
 `;
 
 export const ProjectTexts = styled.div`
@@ -44,15 +39,9 @@ export const ProjectInfo = styled.div`
   color: #5e6c84;
 `;
 
-export const SidebarFooter = styled.div`
-  text-align: center;
-  padding: 16px;
-`;
-
 export const ListGroup = styled.div`
   width: 13rem;
   margin: 0px 16px;
-  flex-grow: 1;
 `;
 
 export const ListItem = styled(NavLink)`
@@ -87,6 +76,15 @@ export const StyledLink = styled.a`
 export const LinkText = styled.span`
   padding: 0px 0px 2px 6px;
   font-weight: bold;
+`;
+
+export const SidebarFooter = styled.div`
+  text-align: center;
+  margin: 16px;
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
 `;
 
 export const KanbanIcon = styled(ViewBoards)``;

@@ -4,8 +4,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../../actions/auth";
 import StyledParticles from "../../common/Particles";
-import { PageWrapper, LoginWrapper, Card, Button, Label } from "./Styles";
-
+import {
+  PageWrapper,
+  FormWrapper,
+  Card,
+  Button,
+  Label,
+} from "../../common/Styles";
 export class Login extends Component {
   state = {
     username: "",
@@ -34,7 +39,7 @@ export class Login extends Component {
     return (
       <PageWrapper>
         <StyledParticles />
-        <LoginWrapper>
+        <FormWrapper>
           <Card className="card card-body">
             <h2 className="text-center">Login</h2>
             <form onSubmit={this.onSubmit}>
@@ -70,7 +75,7 @@ export class Login extends Component {
               New to Vertex? <Link to="/register">Create an account.</Link>
             </p>
           </div>
-        </LoginWrapper>
+        </FormWrapper>
       </PageWrapper>
     );
   }

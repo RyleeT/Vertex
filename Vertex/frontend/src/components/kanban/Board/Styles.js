@@ -1,5 +1,21 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Title = styled.h3`
   font-weight: 500;
+`;
+
+export const Button = styled(Link)`
+  border-radius: 0.25rem;
+  background-color: #ff6b4a;
+  color: white;
+  font-size: 16px;
+  :hover {
+    color: white;
+    background-color: #e95739;
+  }
+  :focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;

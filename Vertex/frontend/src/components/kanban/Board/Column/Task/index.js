@@ -11,9 +11,7 @@ export class Task extends Component {
       >
         {(provided, snapshot) => (
           <TaskLink
-            to={{
-              pathname: `${this.props.match.url}/task/${this.props.task.id}`,
-            }}
+            to={`${this.props.match.url}/task/${this.props.task.id}`}
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
