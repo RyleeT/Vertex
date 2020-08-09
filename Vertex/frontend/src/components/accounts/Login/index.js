@@ -59,6 +59,7 @@ export class Login extends Component {
                   type="password"
                   className="form-control rounded"
                   name="password"
+                  autoComplete="on"
                   onChange={this.onChange}
                   value={password}
                 />

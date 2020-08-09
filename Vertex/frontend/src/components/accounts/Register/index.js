@@ -81,6 +81,7 @@ export class Register extends Component {
                   type="password"
                   className="form-control rounded"
                   name="password"
+                  autoComplete="on"
                   onChange={this.onChange}
                   value={password}
                 />
@@ -91,6 +92,7 @@ export class Register extends Component {
                   type="password"
                   className="form-control rounded"
                   name="password2"
+                  autoComplete="on"
                   onChange={this.onChange}
                   value={password2}
                 />
