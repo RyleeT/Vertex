@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../../actions/auth";
-import { Navbar, Navbutton, StyledLink, Title, Welcome } from "./Styles";
+import {
+  Navbar,
+  Navbutton,
+  StyledLink,
+  Title,
+  Welcome,
+  LogoutButton,
+} from "./Styles";
 import { toggleSidebar } from "../../../actions/sidebar";
 
 export class Header extends Component {
@@ -21,13 +28,8 @@ export class Header extends Component {
         <span className="navbar-text text-white mr-3">
           <Welcome>{user ? `Welcome ${user.username}` : ""}</Welcome>
         </span>
-        <li className="nav-item">
-          <button
-            onClick={this.props.logout}
-            className="nav-link btn btn-info btn-sm text-white rounded"
-          >
-            Logout
-          </button>
+        <li className="nav-item d-flex align-items-center">
+          <LogoutButton onClick={this.props.logout} size="30" />
         </li>
       </ul>
     );
@@ -51,7 +53,7 @@ export class Header extends Component {
     // Sidebar toggle
     const sidebarToggle = (
       <ul className="navbar-nav flex-fill w-100">
-        <Navbutton onClick={this.props.toggleSidebar} size="30"></Navbutton>
+        <Navbutton onClick={this.props.toggleSidebar} size="30" />
       </ul>
     );
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ThreeBars } from "@styled-icons/octicons/ThreeBars";
+import { LogOut } from "@styled-icons/boxicons-regular/LogOut";
 
 export const Navbar = styled.div`
   background: #24292e;
@@ -34,5 +35,13 @@ export const Welcome = styled.span`
   font-weight: 500;
   @media (max-width: 575.98px) {
     display: none;
+  }
+`;
+
+export const LogoutButton = styled(LogOut)`
+  color: white;
+  border-radius: 0.25rem;
+  :hover {
+    color: #bebfc1;
   }
 `;
