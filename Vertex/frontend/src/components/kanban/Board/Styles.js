@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Title = styled.h3`
   font-weight: 500;
+  line-height: 100%;
 `;
 
 export const Button = styled(Link)`

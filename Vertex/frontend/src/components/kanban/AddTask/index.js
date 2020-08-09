@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addTask } from "../../../actions/kanban";
 import Modal from "../../layout/Modal";
-import { FormWrapper, Button, Label } from "../../common/Styles";
-import { Title } from "./Styles";
+import { FormWrapper, Title, Button, Label } from "../../common/Styles";
 
 export class AddTask extends Component {
   state = {

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLead } from "../../../actions/leads";
+import Modal from "../../layout/Modal";
+import { FormWrapper, Title, Button, Label } from "../../common/Styles";
 
 export class AddLead extends Component {
   state = {
@@ -31,46 +33,64 @@ export class AddLead extends Component {
   render() {
     const { name, email, message } = this.state;
     return (
-      <div className="card card-body mb-2 rounded">
-        <h2>Add Lead</h2>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <input
-              className="form-control rounded"
-              type="text"
-              name="name"
-              onChange={this.onChange}
-              value={name}
-            />
-          </div>
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              className="form-control rounded"
-              type="email"
-              name="email"
-              onChange={this.onChange}
-              value={email}
-            />
-          </div>
-          <div className="form-group">
-            <label>Message</label>
-            <textarea
-              className="form-control rounded"
-              type="text"
-              name="message"
-              onChange={this.onChange}
-              value={message}
-            />
-          </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-primary rounded">
-              Submit
+      <Modal>
+        <FormWrapper
+          className="modal-content rounded"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="modal-header">
+            <Title>Add Lead</Title>
+            <button
+              type="button"
+              className="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              onClick={() => this.props.history.goBack()}
+            >
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
-        </form>
-      </div>
+          <div className="modal-body py-2">
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <Label>Name</Label>
+                <input
+                  className="form-control rounded"
+                  type="text"
+                  name="name"
+                  onChange={this.onChange}
+                  value={name}
+                />
+              </div>
+              <div className="form-group">
+                <Label>Email</Label>
+                <input
+                  className="form-control rounded"
+                  type="email"
+                  name="email"
+                  onChange={this.onChange}
+                  value={email}
+                />
+              </div>
+              <div className="form-group">
+                <Label>Message</Label>
+                <textarea
+                  className="form-control rounded"
+                  type="text"
+                  name="message"
+                  onChange={this.onChange}
+                  value={message}
+                />
+              </div>
+              <div className="form-group">
+                <Button type="submit" className="btn">
+                  Submit
+                </Button>
+              </div>
+            </form>
+          </div>
+        </FormWrapper>
+      </Modal>
     );
   }
 }

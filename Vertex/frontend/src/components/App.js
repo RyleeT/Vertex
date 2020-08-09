@@ -13,10 +13,11 @@ import Home from "./common/Home";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
 import PrivateRoute from "./common/PrivateRoute";
-import Dashboard from "./leads/Dashboard";
+import Leads from "./leads/Leads";
 import Board from "./kanban/Board";
 import TaskDetails from "./kanban/TaskDetails";
 import AddTask from "./kanban/AddTask";
+import AddLead from "./leads/AddLead";
 
 import { Wrapper } from "./Styles";
 
@@ -51,7 +52,7 @@ class App extends Component {
                       <Route exact path="/register" component={Register} />
                       <Route exact path="/login" component={Login} />
                       <PrivateRoute path="/board" component={Board} />
-                      <PrivateRoute exact path="/leads" component={Dashboard} />
+                      <PrivateRoute path="/leads" component={Leads} />
                     </Switch>
                   </div>
                 </div>
@@ -68,6 +69,7 @@ class App extends Component {
                   path="/board/task/:taskId"
                   component={TaskDetails}
                 />
+                <PrivateRoute exact path="/leads/create" component={AddLead} />
               </Switch>
             </Fragment>
           </Router>

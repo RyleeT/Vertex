@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Modal from "../../layout/Modal";
 import PropTypes from "prop-types";
 import { getTask, closeTask } from "../../../actions/kanban";
-import { Card, TaskId, Title, Description, DescriptionBody } from "./Styles";
+import Modal from "../../layout/Modal";
+import { Title } from "../../common/Styles";
+import { Card, TaskTitle, Description, DescriptionBody } from "./Styles";
 
 export class TaskDetails extends Component {
   static propTypes = {
@@ -29,7 +30,7 @@ export class TaskDetails extends Component {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="modal-header border-0">
-            <TaskId>Task-{this.props.taskDetails.id}</TaskId>
+            <Title>Task-{this.props.taskDetails.id}</Title>
             <button
               type="button"
               className="close"
@@ -41,7 +42,7 @@ export class TaskDetails extends Component {
             </button>
           </div>
           <div className="modal-body">
-            <Title>{this.props.taskDetails.title}</Title>
+            <TaskTitle>{this.props.taskDetails.title}</TaskTitle>
             <Description>Description</Description>
             <DescriptionBody>Coming soon...</DescriptionBody>
           </div>
