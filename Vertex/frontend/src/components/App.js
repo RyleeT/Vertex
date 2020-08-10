@@ -44,7 +44,7 @@ class App extends Component {
             <Fragment>
               <Wrapper>
                 <Header />
-                <div className="row m-0">
+                <div className="row m-0 flex-grow-1">
                   <Sidebar />
                   <div className="col pl-0 pr-0">
                     <Switch>
