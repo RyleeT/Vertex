@@ -4,7 +4,7 @@
   <a href="https://ryleet-app2.herokuapp.com/">Visit the live app</a>
 </h3>
 
-![Tech logos](https://i.imgur.com/eQIeG7c.png)
+![Tech logos](https://i.imgur.com/VWn6YCG.png)
 
 ![App screenshot](https://i.imgur.com/AOoAeLf.png)
 
