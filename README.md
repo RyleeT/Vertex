@@ -14,10 +14,10 @@ I am a software engineer who loves learning new languages and frameworks. This i
 
 ## Features
 
-- Kanban board with react-powered drag and drop interface
+- Kanban board with React-powered drag and drop interface
 - Lead manager
 - Token authentication and user accounts with Knox
-- Private routes via react router
+- Private routes via React Router
 - Comprehensive backend with Python, Django, Django REST Framework, and PostgreSQL
 - Frontend written in Babel powered JavaScript
 - Powerful state management through Redux
