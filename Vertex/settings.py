@@ -31,7 +31,7 @@ SECRET_KEY = "&cshjvm%c*&^ops!9@9(u9v!ph4ijn4h$lqzr78&mtr2jf=w78"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ryleet-app2.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -56,7 +56,6 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -124,8 +123,12 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "Vertex/frontend/assets"),
+    os.path.join(BASE_DIR, "Vertex/frontend/static"),
+]
 
-# Directory for images
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "Vertex/frontend/assets",),)
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+
+STATIC_URL = "/static/"
 
