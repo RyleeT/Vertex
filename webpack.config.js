@@ -1,5 +1,6 @@
 const path = require("path");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
@@ -14,6 +15,11 @@ module.exports = {
     publicPath: "/static/",
     filename: "[name].js",
     chunkFilename: "[id]-[chunkhash].js",
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
   },
   module: {
     rules: [
@@ -44,6 +50,9 @@ module.exports = {
   },
   plugins: [
     isDevelopment && new ReactRefreshPlugin(),
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "Vertex/frontend/templates/index.html"),
+    }),
+    new CleanWebpackPlugin(),
   ].filter(Boolean),
 };
