@@ -3,23 +3,16 @@ const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const isDevelopment = process.env.NODE_ENV !== "production";
-
 module.exports = {
-  mode: isDevelopment ? "development" : "production",
+  mode: "development",
   entry: {
     main: "./Vertex/frontend/src/index.js",
   },
   output: {
-    path: path.resolve(__dirname, "Vertex/frontend/static"),
+    path: path.resolve(__dirname, "Vertex/frontend/public/static"),
     publicPath: "/static/",
     filename: "[name].js",
     chunkFilename: "[id]-[chunkhash].js",
-  },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
   },
   module: {
     rules: [
@@ -35,7 +28,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
-  devtool: isDevelopment ? "source-map" : "nosources-source-map",
+  devtool: "inline-source-map",
   devServer: {
     contentBase: path.join(__dirname, "Vertex/frontend"),
     proxy: [
@@ -49,10 +42,11 @@ module.exports = {
     hot: true,
   },
   plugins: [
-    isDevelopment && new ReactRefreshPlugin(),
+    new ReactRefreshPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "Vertex/frontend/templates/index.html"),
+      filename: "../index.html",
     }),
-    new CleanWebpackPlugin(),
   ].filter(Boolean),
 };

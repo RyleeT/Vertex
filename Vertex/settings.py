@@ -69,7 +69,7 @@ ROOT_URLCONF = "Vertex.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "Vertex/frontend/static"),],
+        "DIRS": [os.path.join(BASE_DIR, "Vertex/frontend/public"),],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -124,8 +124,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Vertex/frontend/assets"),
-    os.path.join(BASE_DIR, "Vertex/frontend/static"),
+    os.path.join(BASE_DIR, "Vertex/frontend/public"),
+    os.path.join(BASE_DIR, "Vertex/frontend/public/static"),
 ]
 
 STATIC_URL = "/static/"

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -w webpack.config.js -x webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack"
+    "start": "nodemon -w webpack.config.js -x webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +27,7 @@
     "react-refresh": "^0.8.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.1.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "axios": "^0.19.2",
