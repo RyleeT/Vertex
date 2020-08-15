@@ -35,7 +35,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
-  devtool: "source-map",
+  devtool: isDevelopment ? "source-map" : "nosources-source-map",
   devServer: {
     contentBase: path.join(__dirname, "Vertex/frontend"),
     proxy: [
