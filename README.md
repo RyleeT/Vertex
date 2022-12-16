@@ -10,7 +10,7 @@
 
 ## What is this application for?
 
-I am a software engineer who loves learning new languages and frameworks. This is a project I am actively using to improve my skills in various areas which doubles as a showpiece.
+I am a software engineer who loves learning new languages and frameworks. This is a project I used to improve my skills in various areas which doubled as a showpiece.
 
 ## Features
 
