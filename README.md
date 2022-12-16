@@ -1,7 +1,7 @@
 <h1 align="center">A project management app built with React and Django</h1>
 
 <h3 align="center">
-  <a href="https://ryleet-app2.herokuapp.com/">Visit the live app</a>
+  <a href="https://vertex-g4g0.onrender.com">Visit the live app</a>
 </h3>
 
 ![Tech logos](https://i.imgur.com/VWn6YCG.png)
@@ -10,7 +10,7 @@
 
 ## What is this application for?
 
-I am a software engineer who loves learning new languages and frameworks. This is a project I am actively using to improve my skills in various areas which doubles as a showpiece.
+I am a software engineer who loves learning new languages and frameworks. This is a project I used to improve my skills in various areas which doubled as a showpiece.
 
 ## Features
 

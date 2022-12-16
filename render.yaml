@@ -1,0 +1,22 @@
+databases:
+  - name: VertexDB
+    databaseName: vertexdb
+    user: vertex_user
+    plan: free
+
+services:
+  - type: web
+    name: Vertex
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn Vertex.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: VertexDB
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
