@@ -1,7 +1,7 @@
 <h1 align="center">A project management app built with React and Django</h1>
 
 <h3 align="center">
-  <a href="https://ryleet-app2.herokuapp.com/">Visit the live app</a>
+  <a href="https://vertex-g4g0.onrender.com">Visit the live app</a>
 </h3>
 
 ![Tech logos](https://i.imgur.com/VWn6YCG.png)
